@@ -1,0 +1,129 @@
+/* 🔥 Container */
+.container {
+  width: 85%;
+  margin: 30px auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 🔥 Title */
+h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+/* 🔥 Upload Box */
+.upload-box {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+/* 🔥 Buttons */
+button {
+  padding: 6px 14px;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 13px;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+/* 🔥 Button Colors */
+.view {
+  background-color: #4caf50;
+  color: white;
+}
+
+.download {
+  background-color: #2196f3;
+  color: white;
+}
+
+.close-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+/* 🔥 Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 🔥 Header */
+th {
+  background: linear-gradient(90deg, #333, #555);
+  color: white;
+  padding: 12px;
+  text-align: left;
+}
+
+/* 🔥 Rows */
+td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+/* 🔥 Hover effect */
+tr:hover {
+  background-color: #f9f9f9;
+}
+
+/* 🔥 Action buttons spacing */
+td button {
+  margin-right: 6px;
+}
+
+/* 🔥 PDF Viewer Container */
+.pdf-container {
+  margin-top: 25px;
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* 🔥 Header of PDF */
+.pdf-header {
+  background: #333;
+  color: white;
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 🔥 Viewer fix */
+ngx-extended-pdf-viewer,
+ngx-extended-pdf-viewer > div {
+  flex: 1 !important;
+  height: 100% !important;
+  display: block;
+}
+
+/* 🔥 Smooth scroll */
+.pdf-container {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

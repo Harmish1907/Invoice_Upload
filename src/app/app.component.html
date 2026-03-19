@@ -1,0 +1,56 @@
+<div class="container">
+  <h2>Invoice Upload</h2>
+
+  <div class="upload-box">
+    <input type="file" (change)="selectFile($event)" />
+    <button type="button" (click)="upload()">Upload</button>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>File Name</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let item of list">
+        <td>{{ item.fileName }}</td>
+
+        <td>
+          <button class="view" (click)="viewFile(item.id, 'pdf')">View</button>
+
+
+          <button type="button" class="download" (click)="downloadFile(item.id, 'pdf')">
+            Download PDF
+          </button>
+
+          <ng-container *ngIf="item.docxPath">
+            
+
+            <button type="button" class="download" (click)="downloadFile(item.id, 'docx')">
+              Download DOCX
+            </button>
+          </ng-container>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- PDF VIEWER -->
+<div *ngIf="showPdf" class="pdf-container">
+  <div class="pdf-header">
+    <h3>PDF Preview</h3>
+    <button class="close-btn" (click)="showPdf = false">Close</button>
+  </div>
+
+<ngx-extended-pdf-viewer
+  [src]="pdfSrc"
+  [password]="pdfPassword"
+  [useBrowserLocale]="true"
+  [zoom]="'page-width'"
+  style="height: 100%; width: 100%;">
+</ngx-extended-pdf-viewer>
+</div>
